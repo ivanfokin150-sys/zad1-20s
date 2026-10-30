@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Ivan Fokin</title>
+    <script>
+        function AB_fok() 
+	{
+let xa_fok = parseFloat(document.getElementById("xa_fok").value);
+let ya_fok = parseFloat(document.getElementById("ya_fok").value);
+let xb_fok = parseFloat(document.getElementById("xb_fok").value);
+let yb_fok = parseFloat(document.getElementById("yb_fok").value);
+let dx = xb_fok - xa_fok;
+let dy = yb_fok - ya_fok;
+return Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2));
+        }
+	function BC_fok() 
+	{
+let xb_fok = parseFloat(document.getElementById("xb_fok").value);
+let yb_fok = parseFloat(document.getElementById("yb_fok").value);
+let xc_fok = parseFloat(document.getElementById("xc_fok").value);
+let yc_fok = parseFloat(document.getElementById("yc_fok").value);
+let dx = xc_fok - xb_fok;
+let dy = yc_fok - yb_fok;
+return Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2));
+        }
+        function AC_fok() 
+	{
+let xa_fok = parseFloat(document.getElementById("xa_fok").value);
+let ya_fok = parseFloat(document.getElementById("ya_fok").value);
+let xc_fok = parseFloat(document.getElementById("xc_fok").value);
+let yc_fok = parseFloat(document.getElementById("yc_fok").value);
+let dx = xc_fok - xa_fok;
+let dy = yc_fok - ya_fok;
+return Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2));
+        }
+        function boki() 
+	{
+let bokAB = AB_fok();
+let bokBC = BC_fok();
+let bokAC = AC_fok();
+document.getElementById("wyniki").innerHTML = 
+"Długość boku AB: " + bokAB.toFixed(2) + "<br>" +
+"Długość boku BC: " + bokBC.toFixed(2) + "<br>" +
+"Długość boku AC: " + bokAC.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Wszystko o TRÓJKĄCIE</h1>
+    <form>
+        <label>Punkt A (xa_fok, ya_fok):</label><br>
+        <input type="number" id="xa_fok" value="0"><br>
+	<input type="number" id="ya_fok" value="0"><br><br>
+
+        <label>Punkt B (xb_fok, yb_fok):</label><br>
+        <input type="number" id="xb_fok" value="0"><br>
+        <input type="number" id="yb_fok" value="0"><br><br>
+
+        <label>Punkt C (xc_fok, yc_fok):</label><br>
+        <input type="number" id="xc_fok" value="0"><br>
+        <input type="number" id="yc_fok" value="0"><br><br>
+
+        <button type="button" onclick="boki()">Oblicz boki</button>
+    </form>
+    <div  style="color:red;font-size:70px;"id="wyniki"></div>
+
+</body>
+</html> 
